@@ -25,7 +25,7 @@ sqs.receiveMessage(params, function(err, data) {
   if (err) {
     console.log("Receive Error", err);
   } else if (data.Messages) {
-    console.log("body" + data.Messages[0].body)
+    console.log("Body: "+ data.Messages[0].Body)
     var deleteParams = {
       QueueUrl: queueURL,
       ReceiptHandle: data.Messages[0].ReceiptHandle
